@@ -60,11 +60,11 @@
 							"notebookPath": "/Users/bensouda8wail@gmail.com/bronze notebook",
 							"baseParameters": {
 								"start_date": {
-									"value": "@formatDateTime(adddays(utcnow(),-1),'yyyy-mm-dd')",
+									"value": "@formatDateTime(addDays(utcnow(),-1),'yyyy-MM-dd')",
 									"type": "Expression"
 								},
 								"end_date": {
-									"value": "@formatDateTime(utcnow(),'yyyy-mm-dd')",
+									"value": "@formatDateTime(utcnow(),'yyyy-MM-dd')",
 									"type": "Expression"
 								}
 							}
@@ -129,12 +129,12 @@
 						"typeProperties": {
 							"notebookPath": "/Users/bensouda8wail@gmail.com/gold Note Book",
 							"baseParameters": {
-								"sllver_params": {
-									"value": "@string(activity('Silver notebook').output.runOutput)",
-									"type": "Expression"
-								},
 								"bronze_params": {
 									"value": "@string(activity('Bronze notebook').output.runOutput)",
+									"type": "Expression"
+								},
+								"silver_params": {
+									"value": "@string(activity('Silver notebook').output.runOutput)",
 									"type": "Expression"
 								}
 							}
