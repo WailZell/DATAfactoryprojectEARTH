@@ -1,0 +1,9 @@
+{
+	"name": "dataluke12301",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3577599a-0eb6-4ad9-897d-b1bace176b59",
+		"tenantId": "5d714b84-612a-484c-b96c-7e33341a2ffc"
+	}
+}
