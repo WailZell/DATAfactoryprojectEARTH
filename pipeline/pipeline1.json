@@ -15,7 +15,17 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/bensouda8wail@gmail.com/bronze notebook"
+					"notebookPath": "/Users/bensouda8wail@gmail.com/bronze notebook",
+					"baseParameters": {
+						"start_date": {
+							"value": "@formatDateTime(adddays(utcnow(),-1),'yyyy-mm-dd')",
+							"type": "Expression"
+						},
+						"end_date": {
+							"value": "@formatDateTime(utcnow(),'yyyy-mm-dd')",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabrickslinkedservices",
@@ -42,7 +52,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/bensouda8wail@gmail.com/silver notebook"
+					"notebookPath": "/Users/bensouda8wail@gmail.com/silver notebook",
+					"baseParameters": {
+						"bronze_params": {
+							"value": "@string(activity('Bronze notebook').output.runOutput)",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabrickslinkedservices",
@@ -69,7 +85,17 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/bensouda8wail@gmail.com/gold Note Book"
+					"notebookPath": "/Users/bensouda8wail@gmail.com/gold Note Book",
+					"baseParameters": {
+						"sllver_params": {
+							"value": "@string(activity('Silver notebook').output.runOutput)",
+							"type": "Expression"
+						},
+						"bronze_params": {
+							"value": "@string(activity('Bronze notebook').output.runOutput)",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabrickslinkedservices",
