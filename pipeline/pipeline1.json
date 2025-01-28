@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook1",
+				"name": "Bronze notebook",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -13,7 +13,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "AzureDatabrickslinkedservices",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
